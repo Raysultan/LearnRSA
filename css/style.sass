@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat')
+
+$ff: 'Montserrat', sans-serif
+$fsl: 1.5rem
+$fsm: 1.4rem
+$fss: 0.95rem
+$tablet-fsl: 1.2rem
+$tablet-fsm: 1rem
+$tablet-fss: 0.75rem
+$mobile-fsl: 1.12rem
+$mobile-fsm: 0.9rem
+$mobile-fss: 0.7rem
+$fwl: 700
+$fwm: 500
+$pcol: #000
+$scol: #fff
+$spacer: 1rem
+$tablet-spacer: 0.5rem
+$mobile-spacer: 0.35rem
+$breakpoint-medium: 768px
+$breakpoint-small: 576px
+
+*,
+html,
+body
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: $ff
+    color: $pcol
+    text-decoration: none
+
+body
+    width: 100%
+    height: 100%
+
+nav
+    height: 10vh
+    display: flex
+    align-items: center
+    font-size: $fsl
+    font-weight: $fwl
+    padding: 0 $spacer*2
+    a
+        flex-grow: 1
+    ul
+        list-style: none
+        float: right
+        li
+            display: inline-block
+        li:nth-child(2)
+            margin-left: $spacer
+
+main
+    height: 90vh
+    padding: 0 1rem
+    display: grid
+    grid-template-columns: 2fr repeat(6, 1fr)
+    grid-template-rows: minmax(180px, 1fr) minmax(180px, 1fr) minmax(36px, 0.16fr) minmax(26px, 0.1fr)
+    grid-gap: 1.4vw
+    grid-template-areas: "algo   source  source  source result   result  result" "algo   Nkey    Nkey    skey    skey    ekey    ekey" "algo   keygen  keygen  keygen  keygen  keygen  keygen" ".  .   .   .   .   .   ."
+    button
+        min-height: 40px
+        width: 100%
+        border: none
+        border-radius: 5px
+        background: $pcol
+        color: $scol
+    button:hover
+        border: 2px solid $pcol
+        background: $scol
+        color: $pcol
+    textarea
+        resize: none
+        border: 2px solid $pcol
+        border-radius: 5px
+        padding: $spacer
+    .algo
+        grid-area: algo
+        // grid-row: 2/5
+        padding: $spacer $spacer 0 $spacer
+        display: grid
+        grid-gap: $spacer
+        grid-template-rows: auto 1fr  
+        #algo_textarea
+            width: 100%
+            height: 100%        
+    .encrypt
+        grid-area: source
+        // grid-row: 2/3
+        // grid-column: 2/5
+        padding: $spacer
+        display: grid
+        grid-gap: $spacer
+        grid-template-areas: "text   text" "box    box" "btn1   btn2"
+        grid-template-rows: auto 1fr auto
+        h3
+            grid-area: text
+        #source_message
+            grid-area: box
+        
+        .encrypt_btn
+            grid-area: btn1
+            height: $spacer*2
+        .decrypt_btn
+            grid-area: btn2
+            height: $spacer*2
+    .decrypt
+        grid-area: result
+        // grid-row: 2/3
+        // grid-column: 5/-1
+        padding: $spacer
+        display: grid
+        grid-gap: $spacer
+        grid-template-areas: "text   text" "box    box" "btn1   btn2"
+        grid-template-rows: auto 1fr auto
+        h3
+            grid-area: text
+        #result_message
+            grid-area: box
+        .clear_btn
+            grid-area: btn1
+            height: $spacer*2
+        .copy_btn
+            grid-area: btn2
+            height: $spacer*2
+    .Nkey
+        grid-area: Nkey
+        // grid-row: 3/4
+        // grid-column: 2/4
+        padding: $spacer
+        display: grid
+        grid-gap: $spacer
+        grid-template-rows: auto 1fr
+    .skey
+        grid-area: skey
+        // grid-row: 3/4
+        // grid-column: 4/6
+        padding: $spacer
+        display: grid
+        grid-gap: $spacer
+        grid-template-rows: auto 1fr
+    .ekey
+        grid-area: ekey
+        // grid-row: 3/4
+        // grid-column: 6/-1
+        padding: $spacer
+        display: grid
+        grid-gap: $spacer
+        grid-template-rows: auto 1fr
+    .keygen_btn
+        grid-area: keygen
+        // grid-row: 4/5
+        // grid-column: 2/-1
+        border: none
+        border-radius: 5px
+        background: $pcol
+        color: $scol
+footer
+    display: grid
+    min-height: 150px
+    height: 100%
+    grid-template-columns: repeat(2, 1fr)
+    background: $pcol
+    h3, p
+        color: $scol
+    h3
+        font-size: $fsm
+    .footer__about
+        padding: $spacer
+        display: grid
+        grid-gap: $spacer
+        grid-template-areas: "txt" "par"
+        grid-template-rows: auto 1fr
+        h3
+            grid-area: txt
+        p
+            grid-area: par
+            width: 90%
+            font-size: $fss
+            line-height: 2.4
+          
+    .footer__contact
+        padding: $spacer
+        display: grid
+        grid-gap: $spacer
+        grid-template-areas: "text text" "cnt1 cnt2"
+        grid-template-rows: auto 1fr
+        p
+            font-size: $fss
+        h3
+            grid-area: text
+        .gmail
+            grid-area: cnt1
+            display: flex
+            align-items: center
+        .github
+            grid-area: cnt2
+            display: flex
+            align-items: center
+        img
+            width: 36px
+            height: 36px
+            margin-right: $spacer/2
+
+/*Tablets 768px*/
+@media (max-width: $breakpoint-medium)
+    nav
+        padding: 0 $tablet-spacer*3
+        a
+            font-size: $tablet-fsl
+    main
+        height: 100%
+        grid-gap: $tablet-spacer
+        grid-template-areas: "source source source result result result" "Nkey Nkey skey skey ekey ekey" ". keygen keygen keygen keygen ." ". algo algo algo algo ." ". algo algo algo algo ." ". . . . . ."
+        grid-template-columns: repeat(6, 1fr)
+        grid-template-rows: minmax(240px, 1.5fr) minmax(180px, 1fr) minmax(40px, 0.2fr) minmax(120px, 0.5fr) minmax(120px, 0.5fr) minmax(20px, 0.1fr)
+        h3
+            font-size: $tablet-fsm
+        .encrypt
+            padding: $tablet-spacer
+            grid-area: source
+        .decrypt
+            padding: $tablet-spacer
+            grid-area: result
+        .Nkey
+            padding: $tablet-spacer
+            grid-area: Nkey
+        .skey
+            padding: $tablet-spacer
+            grid-area: skey
+        .ekey
+            padding: $tablet-spacer
+            grid-area: ekey
+        .keygen_btn
+            grid-area: keygen
+        .algo
+            padding: $tablet-spacer
+            grid-area: algo
+    footer
+        .footer__about
+            padding: $tablet-spacer*2
+            h3
+                font-size: $tablet-fsm
+            p
+                font-size: $tablet-fss
+                line-height: 2
+        .footer__contact
+            padding: $tablet-spacer*2
+            grid-template-areas: "txt" "cnt1" "cnt2"
+            h3
+                font-size: $tablet-fsm
+                grid-area: txt
+            p
+                font-size: $tablet-fss
+            .gmail
+                grid-area: cnt1
+                display: flex
+                align-items: center
+            .github
+                grid-area: cnt2
+                display: flex
+                align-items: center
+            img
+                width: 30px
+                height: 30px
+                margin-right: $tablet-spacer
+/*Mobile*/
+@media (max-width: $breakpoint-small)
+    nav
+        padding: 0 $tablet-spacer*2+$mobile-spacer
+        a
+            font-size: $mobile-fsl
+    main
+        grid-gap: $mobile-spacer
+        grid-template-areas: "source source source" "result result result" "Nkey skey ekey" "keygen keygen keygen" "algo algo algo" "algo algo algo" ". . ."
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-rows: minmax(200px, 1fr) minmax(200px, 1fr) minmax(160px, 0.8fr) minmax(34px, 0.2fr) minmax(90px, 0.4fr) minmax(90px, 0.4fr) minmax(20px, 0.1fr)
+        textarea
+            padding: $mobile-spacer
+        h3
+            font-size: $mobile-fsm
+        .encrypt_btn, .decrypt_btn, .copy_btn, .clear_btn, .keygen_btn
+            height: 36px !important
+            min-height: 30px
+            width: 100%
+        .encrypt
+            padding: $mobile-spacer
+            grid-area: source
+        .decrypt
+            padding: $mobile-spacer
+            grid-area: result
+        .Nkey
+            padding: $mobile-spacer
+            grid-area: Nkey
+        .skey
+            padding: $mobile-spacer
+            grid-area: skey
+        .ekey
+            padding: $mobile-spacer
+            grid-area: ekey
+        .keygen_btn
+            grid-area: keygen
+        .algo
+            padding: $mobile-spacer
+            grid-area: algo
+    footer
+        grid-gap: 0
+        grid-template-columns: 1fr
+        grid-template-rows: repeat(2, fr)
+        .footer__about
+            display: flex
+            flex-direction: column
+            padding-bottom: 0
+            h3
+                margin-bottom: $mobile-spacer*2

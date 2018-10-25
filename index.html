@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <title>RSA Encryption Algorithm</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="#">Learn RSA</a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>   
+    <main>
+        <section class="algo">
+            <h3>Algorithm</h3>    
+            <textarea name="algorithm" id="algo_textarea"></textarea>
+        </section>
+        <section class="encrypt">
+            <h3>Source message</h3>
+            <textarea name="" id="source_message"></textarea>
+            <button class="encrypt_btn">Encrypt</button>
+            <button class="decrypt_btn">Decrypt</button>
+        </section>
+        <section class="decrypt">
+            <h3>Result message</h3>
+            <textarea name="" id="result_message"></textarea>
+            <button class="clear_btn">Clear all</button>
+            <button class="copy_btn">Copy to clipboard</button>
+        </section>
+        <section class="Nkey">
+            <h3>N (public key)</h3>
+            <textarea name="" id="Nkey_textarea"></textarea>
+        </section>
+        <section class="skey">
+            <h3>s (public key)</h3>
+            <textarea name="" id="skey_textarea"></textarea>
+        </section>
+        <section class="ekey">
+            <h3>e (private key)</h3>
+            <textarea name="" id="ekey_textarea"></textarea>
+        </section>
+        <button class="keygen_btn">Generate keys</button>
+    </main>
+    <footer>
+        <section class="footer__about">
+            <a name="about"></a>
+            <h3>About</h3>
+            <p>Done by Raisultan Karimov. This project was made by learning desires and should be used in same direction.</p>
+        </section>
+        <section class="footer__contact">
+            <a name="contact"></a>
+            <h3>Contact</h3>
+            <div class="gmail">
+                    <img src="/assets/gmail.png" alt="gmail"> 
+                    <p>ki.xbozz@gmail.com</p>
+            </div>
+            <div class="github">
+                    <img src="/assets/github.png" alt="github"> 
+                    <p>github.com/Raysultan</p>
+            </div>
+        </section>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/bigInt.js"></script>
+    <script src="/js/primality.js"></script>
+    <script src="/js/main.js"></script>    
+    <script src="/js/interface.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/alertify.min.js"></script>
+</body>
+</html>

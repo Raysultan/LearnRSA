@@ -1,0 +1,547 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0 2rem;
+}
+
+nav a {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+nav ul {
+  list-style: none;
+  float: right;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li:nth-child(2) {
+  margin-left: 1rem;
+}
+
+main {
+  height: 90vh;
+  padding: 0 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr (1fr)[6];
+      grid-template-columns: 2fr repeat(6, 1fr);
+  -ms-grid-rows: minmax(180px, 1fr) minmax(180px, 1fr) minmax(36px, 0.16fr) minmax(26px, 0.1fr);
+      grid-template-rows: minmax(180px, 1fr) minmax(180px, 1fr) minmax(36px, 0.16fr) minmax(26px, 0.1fr);
+  grid-gap: 1.4vw;
+      grid-template-areas: "algo   source  source  source result   result  result" "algo   Nkey    Nkey    skey    skey    ekey    ekey" "algo   keygen  keygen  keygen  keygen  keygen  keygen" ".  .   .   .   .   .   .";
+}
+
+main button {
+  min-height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background: #000;
+  color: #fff;
+}
+
+main button:hover {
+  border: 2px solid #000;
+  background: #fff;
+  color: #000;
+}
+
+main textarea {
+  resize: none;
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+main .algo {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: algo;
+  padding: 1rem 1rem 0 1rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+}
+
+main .algo #algo_textarea {
+  width: 100%;
+  height: 100%;
+}
+
+main .encrypt {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: source;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+      grid-template-areas: "text   text" "box    box" "btn1   btn2";
+  -ms-grid-rows: auto 1fr auto;
+      grid-template-rows: auto 1fr auto;
+}
+
+main .encrypt h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: text;
+}
+
+main .encrypt #source_message {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: box;
+}
+
+main .encrypt .encrypt_btn {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: btn1;
+  height: 2rem;
+}
+
+main .encrypt .decrypt_btn {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: btn2;
+  height: 2rem;
+}
+
+main .decrypt {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 3;
+  grid-area: result;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+      grid-template-areas: "text   text" "box    box" "btn1   btn2";
+  -ms-grid-rows: auto 1fr auto;
+      grid-template-rows: auto 1fr auto;
+}
+
+main .decrypt h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: text;
+}
+
+main .decrypt #result_message {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: box;
+}
+
+main .decrypt .clear_btn {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: btn1;
+  height: 2rem;
+}
+
+main .decrypt .copy_btn {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: btn2;
+  height: 2rem;
+}
+
+main .Nkey {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: Nkey;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+}
+
+main .skey {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-area: skey;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+}
+
+main .ekey {
+  -ms-grid-row: 2;
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 2;
+  grid-area: ekey;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+}
+
+main .keygen_btn {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 6;
+  grid-area: keygen;
+  border: none;
+  border-radius: 5px;
+  background: #000;
+  color: #fff;
+}
+
+footer {
+  display: -ms-grid;
+  display: grid;
+  min-height: 150px;
+  height: 100%;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  background: #000;
+}
+
+footer h3, footer p {
+  color: #fff;
+}
+
+footer h3 {
+  font-size: 1.4rem;
+}
+
+footer .footer__about {
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+      grid-template-areas: "txt" "par";
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+}
+
+footer .footer__about h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: txt;
+}
+
+footer .footer__about p {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: par;
+  width: 90%;
+  font-size: 0.95rem;
+  line-height: 2.4;
+}
+
+footer .footer__contact {
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+      grid-template-areas: "text text" "cnt1 cnt2";
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+}
+
+footer .footer__contact p {
+  font-size: 0.95rem;
+}
+
+footer .footer__contact h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: text;
+}
+
+footer .footer__contact .gmail {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: cnt1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer__contact .github {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: cnt2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer__contact img {
+  width: 36px;
+  height: 36px;
+  margin-right: 0.5rem;
+}
+
+/*Tablets 768px*/
+@media (max-width: 768px) {
+  nav {
+    padding: 0 1.5rem;
+  }
+  nav a {
+    font-size: 1.2rem;
+  }
+  main {
+    height: 100%;
+    grid-gap: 0.5rem;
+        grid-template-areas: "source source source result result result" "Nkey Nkey skey skey ekey ekey" ". keygen keygen keygen keygen ." ". algo algo algo algo ." ". algo algo algo algo ." ". . . . . .";
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-rows: minmax(240px, 1.5fr) minmax(180px, 1fr) minmax(40px, 0.2fr) minmax(120px, 0.5fr) minmax(120px, 0.5fr) minmax(20px, 0.1fr);
+        grid-template-rows: minmax(240px, 1.5fr) minmax(180px, 1fr) minmax(40px, 0.2fr) minmax(120px, 0.5fr) minmax(120px, 0.5fr) minmax(20px, 0.1fr);
+  }
+  main h3 {
+    font-size: 1rem;
+  }
+  main .encrypt {
+    padding: 0.5rem;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: source;
+  }
+  main .decrypt {
+    padding: 0.5rem;
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+    grid-area: result;
+  }
+  main .Nkey {
+    padding: 0.5rem;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: Nkey;
+  }
+  main .skey {
+    padding: 0.5rem;
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-area: skey;
+  }
+  main .ekey {
+    padding: 0.5rem;
+    -ms-grid-row: 2;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 2;
+    grid-area: ekey;
+  }
+  main .keygen_btn {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
+    grid-area: keygen;
+  }
+  main .algo {
+    padding: 0.5rem;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
+    grid-area: algo;
+  }
+  footer .footer__about {
+    padding: 1rem;
+  }
+  footer .footer__about h3 {
+    font-size: 1rem;
+  }
+  footer .footer__about p {
+    font-size: 0.75rem;
+    line-height: 2;
+  }
+  footer .footer__contact {
+    padding: 1rem;
+        grid-template-areas: "txt" "cnt1" "cnt2";
+  }
+  footer .footer__contact h3 {
+    font-size: 1rem;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: txt;
+  }
+  footer .footer__contact p {
+    font-size: 0.75rem;
+  }
+  footer .footer__contact .gmail {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: cnt1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .footer__contact .github {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: cnt2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .footer__contact img {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+  }
+}
+
+/*Mobile*/
+@media (max-width: 576px) {
+  nav {
+    padding: 0 1.35rem;
+  }
+  nav a {
+    font-size: 1.12rem;
+  }
+  main {
+    grid-gap: 0.35rem;
+        grid-template-areas: "source source source" "result result result" "Nkey skey ekey" "keygen keygen keygen" "algo algo algo" "algo algo algo" ". . .";
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: minmax(200px, 1fr) minmax(200px, 1fr) minmax(160px, 0.8fr) minmax(34px, 0.2fr) minmax(90px, 0.4fr) minmax(90px, 0.4fr) minmax(20px, 0.1fr);
+        grid-template-rows: minmax(200px, 1fr) minmax(200px, 1fr) minmax(160px, 0.8fr) minmax(34px, 0.2fr) minmax(90px, 0.4fr) minmax(90px, 0.4fr) minmax(20px, 0.1fr);
+  }
+  main textarea {
+    padding: 0.35rem;
+  }
+  main h3 {
+    font-size: 0.9rem;
+  }
+  main .encrypt_btn, main .decrypt_btn, main .copy_btn, main .clear_btn, main .keygen_btn {
+    height: 36px !important;
+    min-height: 30px;
+    width: 100%;
+  }
+  main .encrypt {
+    padding: 0.35rem;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: source;
+  }
+  main .decrypt {
+    padding: 0.35rem;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: result;
+  }
+  main .Nkey {
+    padding: 0.35rem;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: Nkey;
+  }
+  main .skey {
+    padding: 0.35rem;
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: skey;
+  }
+  main .ekey {
+    padding: 0.35rem;
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: ekey;
+  }
+  main .keygen_btn {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: keygen;
+  }
+  main .algo {
+    padding: 0.35rem;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: algo;
+  }
+  footer {
+    grid-gap: 0;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: (fr)[2];
+        grid-template-rows: repeat(2, fr);
+  }
+  footer .footer__about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 0;
+  }
+  footer .footer__about h3 {
+    margin-bottom: 0.7rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
