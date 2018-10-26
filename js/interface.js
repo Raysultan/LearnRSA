@@ -59,11 +59,11 @@ $(document).ready(function() {
     decrypt_btn.on("click", function(){
         let x = encrypt_text.val();
         if(x.trim().length===0 || Nkey_text.val().trim().length===0
-         || skey_text.val().trim().length===0 || ekey_text.val().trim().length===0){
+         || ekey_text.val().trim().length===0){
              alert("Source message textbox is unoprppriate or keys haven't been generated");
         }
         else{
-            decrypted = decrypt(x, ekey, Nkey);
+            decrypted = decrypt(encrypt_text.val().trim(), ekey_text.val().trim(), Nkey_text.val().trim());
             decrypt_text.val(decrypted);
         }        
     });
