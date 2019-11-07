@@ -13,7 +13,7 @@ RSA is a relatively slow algorithm, and because of this, it is less commonly use
 - HTML
 - SASS/CSS
 - JS
-- bigInt [library](https://github.com/TimothyMeadows/bigintjs)
+- [bigInt library](https://github.com/TimothyMeadows/bigintjs)
 
 ## Usage
 
